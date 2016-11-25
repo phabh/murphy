@@ -1,0 +1,15 @@
+﻿{
+  "identifier": "",
+  "accessKey": "",
+  "messageReceivers": [
+    {
+      "type": "PlainTextMessageReceiver",
+      "mediaType": "text/plain"
+    }
+  ],
+  "settings": {
+    "jsonFile": ""
+  },
+  "startupType": "Startup",
+  "schemaVersion": 2
+}
