@@ -1,0 +1,12 @@
+<html ng-app="murphyApp">
+<head>
+  <script src="js/angular.min.js"></script>
+  <script src="js/blocklistcontroller.js"></script>
+</head>
+<body ng-controller="blockListController">
+
+<select multiple ng-model="blocklist">
+<option ng-repeat="option in blocklist" ng-value="option.guid">{{option.name}}</option>
+</select>
+</body>
+</html>
