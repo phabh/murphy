@@ -5,8 +5,15 @@
 </head>
 <body ng-controller="blockListController">
 
-<select multiple ng-model="blocklist">
+<select multiple ng-model="selectedBlock">
 <option ng-repeat="option in blocklist" ng-value="option.guid">{{option.name}}</option>
 </select>
+<button ng-click="CreateBlock()">New Block</button>
+<select multiple ng-model="selectedMessage">
+<option ng-repeat="option in GetBlock(selectedBlock).messages" ng-value="option.index">{{option.text}}</option>
+</select>
+<button ng-click="CreateMessage()">New Message</button>
+
+{{GetBlock(selectedBlock)}}
 </body>
 </html>

@@ -3,11 +3,15 @@
 	app.controller('blockListController', function($scope){
 		var self = this;
 		$scope.blocklist = [];
+		$scope.selectedBlock = {};
+		$scope.selectedMessage = {};
 		
 		
-		
-		
-		
+		$scope.GetBlock = function(blockId) {
+			return $scope.blocklist.filter((block)=>{
+				return block.guid == blockId;
+			})[0];
+		};
 		
 		
 		
@@ -22,6 +26,14 @@
 			newBlock.messages.push(newTextMessage);
 			
 			return newBlock;
+		};
+		
+		$scope.CreateMessage = function(){
+			$scope.GetBlock($scope.selectedBlock).messages.push($scope.NewText());
+		};
+		
+		$scope.CreateBlock = function(){
+			$scope.blocklist.push($scope.NewBlock());
 		};
 		
 		$scope.NewGuid = function guid() {
